@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 200" width="900" height="200" role="img" aria-label="Miguel Mora — Backend Developer">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="55%" stop-color="#11202b"/>
+      <stop offset="100%" stop-color="#0b1f18"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#6DB33F"/>
+      <stop offset="100%" stop-color="#3fb3a5"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="900" height="200" fill="url(#bg)"/>
+
+  <!-- identity -->
+  <rect x="40" y="46" width="4" height="86" rx="2" fill="url(#accent)"/>
+
+  <text x="62" y="80" font-family="'Segoe UI', Helvetica, Arial, sans-serif"
+        font-size="42" font-weight="700" fill="#e6edf3">Miguel Mora</text>
+  <text x="64" y="108" font-family="'Cascadia Code', 'Fira Code', Consolas, monospace"
+        font-size="15" fill="#8b949e">Backend Developer &#183; Venezuela</text>
+  <text x="64" y="134" font-family="'Cascadia Code', 'Fira Code', Consolas, monospace"
+        font-size="15" fill="#6DB33F">Rules in the domain, not the controller</text>
+
+  <!-- request flowing through the layers -->
+  <g transform="translate(0,4)">
+    <line x1="590" y1="96" x2="840" y2="96" stroke="#30363d" stroke-width="2"/>
+
+    <!-- travelling requests -->
+    <circle cx="590" cy="96" r="5" fill="#3fb3a5">
+      <animateMotion dur="3s" repeatCount="indefinite" path="M0,0 L250,0"/>
+      <animate attributeName="opacity" dur="3s" repeatCount="indefinite"
+               values="0;1;1;1;0" keyTimes="0;0.06;0.5;0.94;1"/>
+    </circle>
+    <circle cx="590" cy="96" r="5" fill="#6DB33F">
+      <animateMotion dur="3s" repeatCount="indefinite" begin="1.5s" path="M0,0 L250,0"/>
+      <animate attributeName="opacity" dur="3s" repeatCount="indefinite" begin="1.5s"
+               values="0;1;1;1;0" keyTimes="0;0.06;0.5;0.94;1"/>
+    </circle>
+
+    <!-- nodes -->
+    <g fill="#0d1117" stroke="#6DB33F" stroke-width="2">
+      <circle cx="590" cy="96" r="18"/>
+      <circle cx="715" cy="96" r="18"/>
+      <circle cx="840" cy="96" r="18"/>
+    </g>
+
+    <!-- pulse rings, timed to each arrival -->
+    <g fill="none" stroke="#3fb3a5" stroke-width="2">
+      <circle cx="590" cy="96" r="18">
+        <animate attributeName="r" dur="3s" repeatCount="indefinite" values="18;34" keyTimes="0;1"/>
+        <animate attributeName="opacity" dur="3s" repeatCount="indefinite" values="0.7;0" keyTimes="0;1"/>
+      </circle>
+      <circle cx="715" cy="96" r="18">
+        <animate attributeName="r" dur="3s" repeatCount="indefinite" begin="1.5s" values="18;34" keyTimes="0;1"/>
+        <animate attributeName="opacity" dur="3s" repeatCount="indefinite" begin="1.5s" values="0.7;0" keyTimes="0;1"/>
+      </circle>
+      <circle cx="840" cy="96" r="18">
+        <animate attributeName="r" dur="3s" repeatCount="indefinite" begin="3s" values="18;34" keyTimes="0;1"/>
+        <animate attributeName="opacity" dur="3s" repeatCount="indefinite" begin="3s" values="0.7;0" keyTimes="0;1"/>
+      </circle>
+    </g>
+
+    <g font-family="'Cascadia Code', 'Fira Code', Consolas, monospace" font-size="12"
+       fill="#8b949e" text-anchor="middle">
+      <text x="590" y="136">api</text>
+      <text x="715" y="136">domain</text>
+      <text x="840" y="136">postgres</text>
+    </g>
+  </g>
+</svg>
